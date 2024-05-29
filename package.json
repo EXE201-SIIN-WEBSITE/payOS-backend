@@ -1,0 +1,23 @@
+{
+  "name": "payOS-backend",
+  "version": "1.0.0",
+  "description": "Payment with payOS api backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "@payos/node": "^1.0.5",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.11.5",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.2"
+  },
+  "type": "module"
+}
