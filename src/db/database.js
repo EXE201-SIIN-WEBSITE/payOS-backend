@@ -5,7 +5,8 @@ const sequelize = new Sequelize('exe201', 'postgres', 'Hieu15402', {
     port: 5432,
     dialect: 'postgres',
     dialectOptions: {
-      ssl: true
+        ssl: true
     }
-  });
+});
+
 export default sequelize;

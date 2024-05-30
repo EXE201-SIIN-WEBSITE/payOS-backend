@@ -1,5 +1,5 @@
 import express from "express";
-import sequelize from "../../database.js";
+import sequelize from "../../db/database.js";
 const app = express();
 
 import payOS from "../../utils/payos.js";
