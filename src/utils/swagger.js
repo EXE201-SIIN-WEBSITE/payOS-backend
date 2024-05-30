@@ -14,7 +14,8 @@ import swaggerJsdoc from 'swagger-jsdoc'
         },
         servers: [
           {
-            url: "http://localhost:3000/",
+            url: "http://172.188.64.221:3000/docs/",
+            url: "http://localhost:3000/"
             description: "Local server"
           },
         ]
