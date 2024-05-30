@@ -8,9 +8,10 @@
     "start": "nodemon src/server.js"
   },
   "dependencies": {
-    "@payos/node": "^1.0.5",
+    "@payos/node": "^1.0.6",
     "body-parser": "^1.20.2",
     "build": "^0.1.4",
+    "clear": "^0.1.0",
     "express": "^4.19.2",
     "morgan": "^1.10.0",
     "pg": "^8.11.5",

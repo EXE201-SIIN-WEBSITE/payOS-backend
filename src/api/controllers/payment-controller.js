@@ -23,11 +23,11 @@ app.post("/create-link/:orderId", async (req, res) => {
         amount: total,
         description: "Thanh toán đơn hàng " + id,
         cancelUrl: domain + "/api/v1/payment/cancel-payment",
-        returnUrl: domain + "/api/v1/payment/success-payment?id="  + id,
+        returnUrl: domain + "/api/v1/payment/success-payment?id="+ id,
       };
       try {
+        console.log(body);
         const paymentLinkRes = await payOS.createPaymentLink(body);
-
         return res.status(200).json({
           message: "Create link payment success",
           data: {
