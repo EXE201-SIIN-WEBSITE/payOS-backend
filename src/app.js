@@ -6,7 +6,7 @@ const app = express();
 Promise = global.Promise;
 
 
-import paymentRouter from './api/controllers/payment-controller.js';
+import paymentRouter from './controllers/payment-controller.js';
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
     extended:false
