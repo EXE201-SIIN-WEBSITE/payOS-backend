@@ -18,7 +18,7 @@ import swaggerJsdoc from 'swagger-jsdoc'
             description: "Local server"
           },
           {
-            url: "http://172.188.64.221:3000/",
+            url: "http://172.171.207.227:3000/",
             description: "Deploy server"
           }	
         ]
