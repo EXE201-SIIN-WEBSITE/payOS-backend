@@ -19,7 +19,7 @@ import swaggerJsdoc from 'swagger-jsdoc'
           },
           {
             url: "http://172.171.207.227:3000/",
-            description: "Deploy server"
+            description: "Deploy server" 
           }	
         ]
       },
