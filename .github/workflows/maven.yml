@@ -44,4 +44,4 @@ jobs:
             docker rm backend-nodejs-app || true
             docker images --filter=reference='hieu15402/nodejs-api' --format '{{.ID}} {{.Tag}}' | grep '<none>' | awk '{print $1}' | xargs -I {} docker rmi -f {}
             docker pull hieu15402/nodejs-api:latest
-            docker run -d -p 3000:3000 --name backend-nodejs-app hieu15402/nodejs-api:latest
+            docker run -d -p 3000:3000 --name backend-nodejs-app --restart always hieu15402/nodejs-api:latest
