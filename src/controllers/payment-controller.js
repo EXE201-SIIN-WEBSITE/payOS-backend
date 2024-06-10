@@ -47,35 +47,28 @@ app.post("/create-link/:orderId", async (req, res) => {
           cancelUrl: domain + "/api/v1/payment/cancel-payment",
           returnUrl: domain + "/api/v1/payment/success-payment?id=" + id,
         };
-        if (total == 0) {
-          return res.status(400).json({
-            message: "Total price is 0",
+        try {
+          console.log(body);
+          const paymentLinkRes = await payOS.createPaymentLink(body);
+          return res.status(200).json({
+            message: "Create link payment success",
+            data: {
+              bin: paymentLinkRes.bin,
+              checkoutUrl: paymentLinkRes.checkoutUrl,
+              accountNumber: paymentLinkRes.accountNumber,
+              accountName: paymentLinkRes.accountName,
+              amount: paymentLinkRes.amount,
+              description: paymentLinkRes.description,
+              orderCode: paymentLinkRes.orderCode,
+              qrCode: paymentLinkRes.qrCode,
+            },
+          });
+        } catch (error) {
+          console.log(error);
+          return res.status(404).json({
+            message: "Create fail",
             data: [],
           });
-        } else {
-          try {
-            console.log(body);
-            const paymentLinkRes = await payOS.createPaymentLink(body);
-            return res.status(200).json({
-              message: "Create link payment success",
-              data: {
-                bin: paymentLinkRes.bin,
-                checkoutUrl: paymentLinkRes.checkoutUrl,
-                accountNumber: paymentLinkRes.accountNumber,
-                accountName: paymentLinkRes.accountName,
-                amount: paymentLinkRes.amount,
-                description: paymentLinkRes.description,
-                orderCode: paymentLinkRes.orderCode,
-                qrCode: paymentLinkRes.qrCode,
-              },
-            });
-          } catch (error) {
-            console.log(error);
-            return res.status(404).json({
-              message: "Create fail",
-              data: [],
-            });
-          }
         }
       } else {
         return res.status(404).json({
