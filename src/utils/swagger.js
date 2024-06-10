@@ -14,13 +14,13 @@ import swaggerJsdoc from 'swagger-jsdoc'
         },
         servers: [
           {
-            url: "http://localhost:3000/",
-            description: "Local server"
-          },
-          {
             url: "http://172.171.207.227:3000/",
             description: "Deploy server" 
-          }	
+          }	,
+          {
+            url: "http://localhost:3000/",
+            description: "Local server"
+          }
         ]
       },
       // looks for configuration in specified directories
