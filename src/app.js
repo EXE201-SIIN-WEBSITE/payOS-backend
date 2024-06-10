@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import bodyParser  from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 Promise = global.Promise;
@@ -11,6 +12,9 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
     extended:false
 }));
+app.use(cors({
+    origin: '*'
+  }));
 app.use(bodyParser.json());
 
 app.use('/payments', paymentRouter);
