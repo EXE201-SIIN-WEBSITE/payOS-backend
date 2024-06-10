@@ -36,23 +36,23 @@ app.post("/create-link/:orderId", async (req, res) => {
     })
     .then(async (results) => {
       if (results != null) {
-        if (orderDetail.total === 0) {
-          return res.status(404).json({
-            message: "Amount is 0",
+        const orderDetail = results[0];
+        const total = orderDetail.total;
+        const id = orderDetail.id;
+        const { description, returnUrl, cancelUrl, amount } = req.body;
+        const body = {
+          orderCode: Number(String(new Date().getTime()).slice(-6)),
+          amount: total,
+          description: "Thanh toán đơn hàng " + id,
+          cancelUrl: domain + "/api/v1/payment/cancel-payment",
+          returnUrl: domain + "/api/v1/payment/success-payment?id=" + id,
+        };
+        if (total == 0) {
+          return res.status(400).json({
+            message: "Total price is 0",
             data: [],
           });
         } else {
-          const orderDetail = results[0];
-          const total = orderDetail.total;
-          const id = orderDetail.id;
-          const { description, returnUrl, cancelUrl, amount } = req.body;
-          const body = {
-            orderCode: Number(String(new Date().getTime()).slice(-6)),
-            amount: total,
-            description: "Thanh toán đơn hàng " + id,
-            cancelUrl: domain + "/api/v1/payment/cancel-payment",
-            returnUrl: domain + "/api/v1/payment/success-payment?id=" + id,
-          };
           try {
             console.log(body);
             const paymentLinkRes = await payOS.createPaymentLink(body);
