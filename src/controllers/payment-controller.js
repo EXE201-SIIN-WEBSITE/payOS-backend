@@ -81,5 +81,7 @@ app.post("/create-link/:orderId", async (req, res) => {
       console.error("Error fetching order details:", error);
     });
 });
-
+app.get("/hello", (req, res) => {
+  res.send("Hello");
+});
 export default app;
