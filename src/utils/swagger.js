@@ -16,10 +16,6 @@ import swaggerJsdoc from 'swagger-jsdoc'
           {
             url: "https://payos.exe201-backend.click/",
             description: "Deploy server" 
-          }	,
-          {
-            url: "http://localhost:3000/",
-            description: "Local server"
           }
         ]
       },
