@@ -14,7 +14,7 @@ import swaggerUi from 'swagger-ui-express'
         },
         servers: [
           {
-            url: "https://payos.exe201-backend.click/",
+            url: "http://172.171.207.227:3000/",
             description: "Deploy server" 
           } ,
           {
