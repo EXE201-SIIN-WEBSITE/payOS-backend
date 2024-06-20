@@ -14,7 +14,7 @@ import swaggerJsdoc from 'swagger-jsdoc'
         },
         servers: [
           {
-            url: "http://172.171.207.227:3000/",
+            url: "https://payos.exe201-backend.click/",
             description: "Deploy server" 
           }	,
           {
