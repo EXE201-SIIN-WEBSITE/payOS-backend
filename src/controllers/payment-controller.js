@@ -4,7 +4,7 @@ const app = express();
 
 import payOS from "../utils/payos.js";
 
-const domain = "http://172.171.207.227:8080";
+const domain = "https://siin.id.vn";
 
 /** POST Methods */
 /**
