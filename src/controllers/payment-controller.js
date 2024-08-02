@@ -45,7 +45,7 @@ app.post("/create-link/:orderId", async (req, res) => {
           amount: total,
           description: "Thanh toán đơn hàng " + id,
           cancelUrl: domain + "/api/v1/payment/cancel-payment",
-          returnUrl: domain + "/api/v1/payment/success-payment?id=" + id,
+          returnUrl: domain + "/#/cart",
         };
         try {
           console.log(body);
